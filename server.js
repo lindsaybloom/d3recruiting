@@ -12,9 +12,11 @@ var db = mongo.Db.connect(mongoUri, function (error, databaseConnection) {
 });*/
 
 app.get('/', function (request, response) {
-  //response.set('Content-Type', 'text/html');
-  //response.sendFile(path.join(__dirname + '/index.html'));
-    res.sendFile('index.html' , { root : __dirname});
+    //response.set('Content-Type', 'text/html');
+    //response.sendFile(path.join(__dirname + '/index.html'));
+    var path = require('path');
+    res.sendFile(path.resolve('/index.html'));
+    //res.sendFile('index.html' , { root : __dirname});
 });
 
 
