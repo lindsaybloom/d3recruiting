@@ -11,14 +11,11 @@ var db = mongo.Db.connect(mongoUri, function (error, databaseConnection) {
   db = databaseConnection;
 });*/
 
-app.get('/', function (request, response) {
+app.get('/', function (req, res) {
     //response.set('Content-Type', 'text/html');
     //response.sendFile(path.join(__dirname + '/index.html'));
-    var path = require('path');
-    res.sendFile(path.resolve('/index.html'));
-    //res.sendFile('index.html' , { root : __dirname});
+    res.sendFile('index.html' , { root : __dirname});
 });
-
 
 // Oh joy! http://stackoverflow.com/questions/15693192/heroku-node-js-error-web-process-failed-to-bind-to-port-within-60-seconds-of
 app.listen(process.env.PORT || 3000);
