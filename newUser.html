@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html ng-app="app">
+
+    <head>
+        <title>DIII Recruiting</title>
+        <meta charset="UTF-8">
+        <script src = "newUser.js"></script>
+        <script src="../js/jquery-3.1.1.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="d3recruiting.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Ubuntu+Condensed" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+        <div class="jumbotron" id = "myjumbo">
+            <h1 class="display-3">DIII Recruiting
+                <img id = "logo" src = "d3logo.png"></h1>
+            <!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>-->
+        </div>
+
+
+
+        <div class="navbar-wrapper">
+            <div class="container">
+
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="index.html">DIII Recruiting</a>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="about.html">Division III Athletics</a>
+                                </li>
+                                <li><a href="findAthlete.html">Find an Athlete</a>
+                                </li>
+                                <li><a href="getRecruited.html">Get Recruited</a>
+                                </li>
+                                <li><a href="login.html">Login</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+        </div>
+
+        <div ng-controller="userCtrl">
+
+            <!-- Pass the user data to saveUser() -->
+            <form name="userForm" ng-submit="saveUser(userInfo)">
+                <label>First Name:</label>
+
+                <!-- Define that a value is required and it must be 2 characters in length or more -->
+                <input type="text" name="fName" ng-model="userInfo.fName"
+                       ng-required="true" ng-minlength="2" />
+
+                <!-- $dirty is set to true if a user interacts with a element and then we check if the elements required field is true -->
+                <span class="error-message" ng-show="userForm.fName.$dirty
+                                                     && userForm.fName.$error.required">Must Enter a First Name
+                </span>
+
+                <!-- Check if the element has been edited and whether it contains at least 2 characters -->
+                <span class="error-message" ng-show="userForm.fName.$dirty
+                                                     && userForm.fName.$error.minlength">Must be a Minimum of 2 Characters</span>
+
+                <br><br>
+
+                <label>Last Name:</label>
+
+                <input type="text" name="lName" ng-model="userInfo.lName"
+                       ng-required="true" ng-minlength="2" />
+
+                <span class="error-message" ng-show="userForm.lName.$dirty
+                                                     && userForm.lName.$error.required">Must Enter a Last Name
+                </span>
+
+                <span class="error-message" ng-show="userForm.lName.$dirty
+                                                     && userForm.lName.$error.minlength">Must be a Minimum of 2 Characters</span>
+
+                <br><br>
+
+                <label>Address:</label>
+
+                <input type="text" name="street" ng-model="userInfo.address"
+                       ng-required="true" ng-minlength="6" ng-pattern="/^(\d{3,})\s?(\w{0,5})\s([a-zA-Z]{2,30})\s([a-zA-Z]{2,15})\.?\s?(\w{0,5})$/" />
+
+                <span class="error-message" ng-show="userForm.address.$dirty
+                                                     && userForm.address.$invalid">Must Enter a Number, Street and Street Type (ex: 123 Main St)
+                </span>
+
+                <br><br>
+
+                <label>State:</label>
+
+                <select name="state" ng-model="userInfo.state"  ng-required="true">
+
+                    <option value="other">I don't live in the US</option>
+                    <option value="Alabama">Alabama</option>
+                    <option value="Alaska">Alaska</option>
+                    <option value="Arizona">Arizona</option>
+                    <option value="Arkansas">Arkansas</option>
+                    <option value="California">California</option>
+                    <option value="Colorado">Colorado</option>
+                    <option value="Connecticut">Connecticut</option>
+                    <option value="Delaware">Delaware</option>
+                    <option value="Florida">Florida</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Hawaii">Hawaii</option>
+                    <option value="Idaho">Idaho</option>
+                    <option value="Illinois">Illinois</option>
+                    <option value="Indiana">Indiana</option>
+                    <option value="Iowa">Iowa</option>
+                    <option value="Kansas">Kansas</option>
+                    <option value="Kentucky">Kentucky</option>
+                    <option value="Louisiana">Louisiana</option>
+                    <option value="Maine">Maine</option>
+                    <option value="Maryland">Maryland</option>
+                    <option value="Massachusetts">Massachusetts</option>
+                    <option value="Michigan">Michigan</option>
+                    <option value="Minnesota">Minnesota</option>
+                    <option value="Mississippi">Mississippi</option>
+                    <option value="Missouri">Missouri</option>
+                    <option value="Montana">Montana</option>
+                    <option value="Nebraska">Nebraska</option>
+                    <option value="Nevada">Nevada</option>
+                    <option value="New Hampshire">New Hampshire</option>
+                    <option value="New Jersey">New Jersey</option>
+                    <option value="New Mexico">New Mexico</option>
+                    <option value="New York">New York</option>
+                    <option value="North Carolina">North Carolina</option>
+                    <option value="North Dakota">North Dakota</option>
+                    <option value="Ohio">Ohio</option>
+                    <option value="Oklahoma">Oklahoma</option>
+                    <option value="Oregon">Oregon</option>
+                    <option value="Pennsylvania">Pennsylvania</option>
+                    <option value="Rhode Island">Rhode Island</option>
+                    <option value="South Carolina">South Carolina</option>
+                    <option value="South Dakota">South Dakota</option>
+                    <option value="Tennessee">Tennessee</option>
+                    <option value="Texas">Texas</option>
+                    <option value="Utah">Utah</option>
+                    <option value="Vermont">Vermont</option>
+                    <option value="Virginia">Virginia</option>
+                    <option value="Washington">Washington</option>
+                    <option value="West Virginia">West Virginia</option>
+                    <option value="Wisconsin">Wisconsin</option>
+                    <option value="Wyoming">Wyoming</option>
+
+                </select>
+
+                <br><br>
+
+                <label>High School:</label>
+
+                <input type="text" name="highSchool" ng-model="userInfo.highSchool"
+                       ng-required="true" />
+
+                <span class="error-message" ng-show="userForm.highSchool.$dirty
+                                                     && userForm.highSchool.$invalid">Must Enter a high school
+                </span>
+
+                <br><br>
+
+                <label>High School Coach:</label>
+
+                <input type="text" name="hsCoach" ng-model="userInfo.hsCoach"
+                       ng-required="true" />
+
+                <span class="error-message" ng-show="userForm.hsCoach.$dirty
+                                                     && userForm.hsCoach.$invalid">Must enter your high school coach's name
+                </span>
+
+                <br><br>
+
+                <label>High School Coach Email:</label>
+
+                <input type="text" name="hsCoachEmail" ng-model="userInfo.hsCoachEmail"
+                       ng-required="true" />
+
+                <span class="error-message" ng-show="userForm.hsCoachEmail.$dirty
+                                                     && userForm.hsCoachEmail.$invalid">Must Enter a high school coach email
+                </span>
+
+                <br><br>
+
+                <label>AAU Team:</label>
+
+                <input type="text" name="aauTeam" ng-model="userInfo.aauTeam"
+                       ng-required="false" />
+
+                <br><br>
+
+                <label>AAU Coach:</label>
+
+                <input type="text" name="aauCoach" ng-model="userInfo.aauCoach"
+                       ng-required="false" />
+
+                <br><br>
+
+                <label>AAU Coach Email:</label>
+
+                <input type="text" name="aauCoachEmail" ng-model="userInfo.aauCoachEmail"
+                       ng-required="false" />
+
+                <br><br>
+
+                <label>Subscribe:</label>
+
+                <input type="checkbox" name="subscribe" ng-model="userInfo.subscribe" ng-true-value="'Subscribe'" ng-false-value="'Don\'t Subscribe'" />
+
+                <br><br>
+
+                <!-- Disable the button until every element in the form is valid -->
+                <input type="submit" value="Save" ng-disabled="userForm.$invalid"/>
+
+                <!-- Output new users -->
+                <ul>
+                    <li ng-repeat = "item in user">
+                        {{ 'User: ' + item.fName + " " + item.lName + " " + item.address +
+                        " " + item.state + " " + item.highSchool + " " + item.hsCoach + " " + item.hsCoachEmail + " " + 
+                        item.aauTeam + " " + item.aauCoach + " " + item.aauCoachEmail + " " + item.subscribe}}
+                    </li>
+                </ul>
+            </form>
+
+        </div> <!-- End of userCtrl -->
+
+        <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyDzbNmkziPoLHYXGPSQFgLLLuWSvAVRNng",
+                authDomain: "d3-recruiting.firebaseapp.com",
+                databaseURL: "https://d3-recruiting.firebaseio.com",
+                projectId: "d3-recruiting",
+                storageBucket: "",
+                messagingSenderId: "1097947548428"
+            };
+            firebase.initializeApp(config);
+        </script>
+
+        <!-- Load the AngularJS library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+        <!-- Load the JS Module -->
+        <script src="newUser.js"></script>
+
+    </body>
+</html>
