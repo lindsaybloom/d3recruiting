@@ -2,7 +2,7 @@
   "name": "d3recruiting",
   "version": "1.0.0",
   "description": "division iii recruiting database",
-  "main": "fbLogin.js",
+  "main": "server.js",
   "scripts": {
     "test": "test",
     "start": "node server.js"
