@@ -11,6 +11,8 @@ var db = mongo.Db.connect(mongoUri, function (error, databaseConnection) {
   db = databaseConnection;
 });*/
 app.use(express.static(__dirname + '/public'));
+app.use('/style',express.static(__dirname + '/public/style'));
+
 
 app.all('*', function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
