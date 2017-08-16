@@ -34,7 +34,7 @@ app.set('view engine', 'ejs');
 app.get('/', function (req, res) {
     //response.set('Content-Type', 'text/html');
     //response.sendFile(path.join(__dirname + '/index.html'));
-    res.sendFile('index.html' , { root : __dirname});
+    res.sendFile('/public/index.html' , { root : __dirname});
 });
 
 // Oh joy! http://stackoverflow.com/questions/15693192/heroku-node-js-error-web-process-failed-to-bind-to-port-within-60-seconds-of
