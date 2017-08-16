@@ -1,5 +1,7 @@
 // Express initialization
 var express = require('express');
+var firebase = require('firebase');
+var firebaseui = require('firebaseui');
 var app = express();
 
 // Mongo initialization, setting up a connection to a MongoDB  (on Heroku or localhost)
@@ -35,6 +37,12 @@ app.get('/', function (req, res) {
     //response.set('Content-Type', 'text/html');
     //response.sendFile(path.join(__dirname + '/index.html'));
     res.sendFile('/public/index.html' , { root : __dirname});
+});
+
+app.get('/public/login.html', function (req, res) {
+    //response.set('Content-Type', 'text/html');
+    //response.sendFile(path.join(__dirname + '/index.html'));
+    res.sendFile('/public/login.html' , { root : __dirname});
 });
 
 // Oh joy! http://stackoverflow.com/questions/15693192/heroku-node-js-error-web-process-failed-to-bind-to-port-within-60-seconds-of

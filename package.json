@@ -19,5 +19,9 @@
   "homepage": "https://github.com/lindsaybloom/d3recruiting#readme",
   "devDependencies": {
     "express": "^4.15.4"
+  },
+  "dependencies": {
+    "firebase": "^4.2.0",
+    "firebaseui": "^2.3.0"
   }
 }

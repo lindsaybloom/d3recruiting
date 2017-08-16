@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="d3recruiting.css"/>
         <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Ubuntu+Condensed" rel="stylesheet">
+        <script src="bower_components/firebaseui/dist/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="bower_components/firebaseui/dist/firebaseui.css" />
         <style>
             [ng\:cloak], [ng-cloak], .ng-cloak { display: none;}
             .bluetext {
@@ -59,7 +61,7 @@
                                 </li>
                                 <li><a href="getRecruited.html">Get Recruited</a>
                                 </li>
-                                <li><a href="/public/login.html">Login</a>
+                                <li><a href="/login.html">Login</a>
                                 </li>
 
                             </ul>
@@ -83,6 +85,15 @@
             };
             firebase.initializeApp(config);
         </script>
+        <script src="/__/firebase/4.2.0/firebase-app.js"></script>
+        <script src="/__/firebase/4.2.0/firebase-auth.js"></script>
+        <script src="/__/firebase/4.2.0/firebase-database.js"></script>
+        <script src="/__/firebase/4.2.0/firebase-messaging.js"></script>
+
+        <!-- Leave out Storage -->
+        <!-- <script src="/__/firebase/4.2.0/firebase-storage.js"></script> -->
+
+        <script src="/__/firebase/init.js"></script>
 
         <!-- Load the AngularJS library -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
