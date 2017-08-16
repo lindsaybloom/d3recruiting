@@ -12,8 +12,8 @@ var db = mongo.Db.connect(mongoUri, function (error, databaseConnection) {
 });*/
 
 app.get('/', function (request, response) {
-  response.set('Content-Type', 'text/html');
-  response.send('<p>Hey, it works!</p>');
+  //response.set('Content-Type', 'text/html');
+  response.sendFile(path.join(__dirname + '/index.html'));
 });
 
 
