@@ -3,14 +3,22 @@
     <head>
         <title>DIII Recruiting</title>
         <meta charset="UTF-8">
+        <!-- bootstrap -->
         <script src="/style/jquery-3.1.1.min.js"></script>
         <script src="/style/bootstrap.min.js"></script>
         <link rel="stylesheet" href="/style/bootstrap.min.css"/>
         <link rel="stylesheet" href="d3recruiting.css"/>
+        <!-- fonts -->
         <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Ubuntu+Condensed" rel="stylesheet">
+        <!-- firebase -->
+        <script src="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.css" />
+        <script src="node_modules/firebaseui/dist/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="node_modules/firebaseui/dist/firebaseui.css" />
         <script src="bower_components/firebaseui/dist/firebaseui.js"></script>
         <link type="text/css" rel="stylesheet" href="bower_components/firebaseui/dist/firebaseui.css" />
+
         <style>
             [ng\:cloak], [ng-cloak], .ng-cloak { display: none;}
             .bluetext {
@@ -85,6 +93,7 @@
             };
             firebase.initializeApp(config);
         </script>
+
         <script src="/__/firebase/4.2.0/firebase-app.js"></script>
         <script src="/__/firebase/4.2.0/firebase-auth.js"></script>
         <script src="/__/firebase/4.2.0/firebase-database.js"></script>

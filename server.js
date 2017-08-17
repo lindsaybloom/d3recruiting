@@ -1,8 +1,8 @@
 // Express initialization
 var express = require('express');
-var firebase = require('firebase');
-var firebaseui = require('firebaseui');
 var app = express();
+var firebase = require('firebase');
+//var firebaseui = require('firebaseui');
 
 // Mongo initialization, setting up a connection to a MongoDB  (on Heroku or localhost)
 /*var mongoUri = process.env.MONGOLAB_URI ||
