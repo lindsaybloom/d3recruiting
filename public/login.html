@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
-<html> <!--ng-app="app1">-->
-
+<html>
     <head>
         <title>DIII Recruiting</title>
         <meta charset="UTF-8">
@@ -30,8 +29,6 @@
                 <img id = "logo" src = "d3logo.png"></h1>
             <!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>-->
         </div>
-
-
 
         <div class="navbar-wrapper">
             <div class="container">
@@ -66,38 +63,50 @@
             </div>
         </div>
 
+        <!--
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+<br><br>
+<div class="fb-login-button" data-width="200" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true"></div> 
+<br><br>
+<div id="status"></div>
+<br><br>
+<div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
+<br><br> -->
 
-        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-        </fb:login-button>
-        <br><br>
-        <div class="fb-login-button" data-width="200" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true"></div> 
-        <br><br>
-        <div id="status"></div>
-        <br><br>
-        <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
-        <br><br>
-
-        <span>Don't have an account?</span>
+        <!--<span>Don't have an account?</span>
         <span><a href = "newUser.html">Sign up here!</a></span>
+        <br><br>
 
-        <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-        <script>
-            // Initialize Firebase
-            var config = {
-                apiKey: "AIzaSyDzbNmkziPoLHYXGPSQFgLLLuWSvAVRNng",
-                authDomain: "d3-recruiting.firebaseapp.com",
-                databaseURL: "https://d3-recruiting.firebaseio.com",
-                projectId: "d3-recruiting",
-                storageBucket: "",
-                messagingSenderId: "1097947548428"
-            };
-            firebase.initializeApp(config);
-        </script>
-   <!--
-        <script src="/__/firebase/4.2.0/firebase-app.js"></script>
-        <script src="/__/firebase/4.2.0/firebase-auth.js"></script>
-        <script src="/__/firebase/4.2.0/firebase-database.js"></script>
-        <script src="/__/firebase/4.2.0/firebase-messaging.js"></script>
+        <button onclick = "googleSignin()">Google Signin</button>
+        <button onclick = "googleSignout()">Google Signout</button>-->
+        <div class="firebaseui-container firebaseui-page-provider-sign-in firebaseui-id-page-provider-sign-in">
+            <div class="firebaseui-card-content">
+                <form onsubmit="return false;">
+                    <ul class="firebaseui-idp-list">
+                        <li class="firebaseui-list-item">
+                            <button class="firebaseui-idp-button mdl-button mdl-js-button mdl-button--raised firebaseui-idp-google firebaseui-id-idp-button " data-provider-id="google.com" data-upgraded=",MaterialButton" onclick = "googleSignin()">
+                                <img class="firebaseui-idp-icon" src="https://www.gstatic.com/firebasejs/ui/0.5.0/images/auth/google.svg">
+                                <span class="firebaseui-idp-text firebaseui-idp-text-long">Sign in with Google</span>
+                                <span class="firebaseui-idp-text firebaseui-idp-text-short">Google</span>
+                            </button></li>
+                        <li class="firebaseui-list-item">
+                            <button class="firebaseui-idp-button mdl-button mdl-js-button mdl-button--raised firebaseui-idp-password firebaseui-id-idp-button " data-provider-id="password" data-upgraded=",MaterialButton">
+                                <img class="firebaseui-idp-icon" src="https://www.gstatic.com/firebasejs/ui/0.5.0/images/auth/mail.svg">
+                                <span class="firebaseui-idp-text firebaseui-idp-text-long">Sign in with email</span>
+                                <span class="firebaseui-idp-text firebaseui-idp-text-short">Email</span>
+                            </button>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+
+        <!--
+<script src="/__/firebase/4.2.0/firebase-app.js"></script>
+<script src="/__/firebase/4.2.0/firebase-auth.js"></script>
+<script src="/__/firebase/4.2.0/firebase-database.js"></script>
+<script src="/__/firebase/4.2.0/firebase-messaging.js"></script>
 -->
         <script src="/bower_components/firebase/firebase-app.js"></script>
         <script src="/bower_components/firebase/firebase-auth.js"></script>
@@ -107,15 +116,29 @@
         <!-- Leave out Storage -->
         <!-- <script src="/__/firebase/4.2.0/firebase-storage.js"></script> 
 
-        <script src="/__/firebase/init.js"></script>  -->
+<script src="/__/firebase/init.js"></script>  -->
 
         <!-- Load the AngularJS library -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 
         <!-- Load the JS Module -->
-        <script src = "signup.js"></script>
         <!--<script src = "fbLogin.js"></script>
-        <script src="../server.js"></script>-->
+<script src="../server.js"></script>-->
 
     </body>
+    <script src = "signup.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDzbNmkziPoLHYXGPSQFgLLLuWSvAVRNng",
+            authDomain: "d3-recruiting.firebaseapp.com",
+            databaseURL: "https://d3-recruiting.firebaseio.com",
+            projectId: "d3-recruiting",
+            storageBucket: "",
+            messagingSenderId: "1097947548428"
+        };
+        firebase.initializeApp(config);
+    </script>
+
 </html>
