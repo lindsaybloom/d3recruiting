@@ -87,3 +87,8 @@ html body {
 .active {
     background-color:  white;
 }
+	
+button{
+  margin:auto;
+  display:block;
+}
